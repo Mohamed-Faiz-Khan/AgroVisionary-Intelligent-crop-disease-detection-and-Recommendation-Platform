@@ -1,0 +1,22 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<nav>
+    <div class="logo">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="AgriVisionary Logo">
+        </a>
+    </div>
+    <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('crop_recommendation') }}">Crop Recommendation</a></li>
+        <li><a href="{{ url_for('crop_disease_detection') }}">Crop Disease Detection</a></li>
+        <!-- <li><a href="{{ url_for('fertilizer') }}">Fertilizer</a></li>
+        <li><a href="index.html" target="_blank">Log Out</a></li> -->
+    </ul>
+</nav>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crop Recommendation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='crstyles.css') }}" rel="stylesheet">
+</head>
+<header>
+    {% include 'navbar.html' %}
+</header>
+<body>
+    <div class="background-container" style="margin-top: 120px;">
+        <div class="container my-3 mt-3">
+            <h1 class="text-success">Crop Recommendation System <span class="text-success">🌱</span></h1>
+
+            <form id="cropForm" action="/predict" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="Nitrogen">Nitrogen (0-200)</label>
+                        <input type="number" id="Nitrogen" name="Nitrogen" placeholder="Enter Nitrogen" class="form-control" required step="0.01">
+                        <span class="error-msg" id="NitrogenError"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Phosporus">Phosphorus (5-145)</label>
+                        <input type="number" id="Phosporus" name="Phosporus" placeholder="Enter Phosphorus" class="form-control" required step="0.01">
+                        <span class="error-msg" id="PhosporusError"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Potassium">Potassium (5-205)</label>
+                        <input type="number" id="Potassium" name="Potassium" placeholder="Enter Potassium" class="form-control" required step="0.01">
+                        <span class="error-msg" id="PotassiumError"></span>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <label for="Temperature">Temperature (10-44°C)</label>
+                        <input type="number" step="0.01" id="Temperature" name="Temperature" placeholder="Enter Temperature in °C" class="form-control" required>
+                        <span class="error-msg" id="TemperatureError"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Humidity">Humidity (14-85%)</label>
+                        <input type="number" step="0.01" id="Humidity" name="Humidity" placeholder="Enter Humidity in %" class="form-control" required>
+                        <span class="error-msg" id="HumidityError"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Ph">pH (3-9)</label>
+                        <input type="number" step="0.01" id="Ph" name="Ph" placeholder="Enter pH value" class="form-control" required>
+                        <span class="error-msg" id="PhError"></span>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <label for="Rainfall">Rainfall (20-300 mm)</label>
+                        <input type="number" step="0.01" id="Rainfall" name="Rainfall" placeholder="Enter Rainfall in mm" class="form-control" required>
+                        <span class="error-msg" id="RainfallError"></span>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div style="margin-bottom: 1rem;" class="col-md-12 text-center">
+                        <button style="background-color: #28a745;" type="submit" id="submitBtn" class="btn btn-primary btn-lg" disabled>Get Recommendation</button>
+                    </div>
+                </div>
+            </form>
+
+            {% if request.method == 'POST' %}
+                {% if not image_filename %}
+                <div class="text-center">
+                    <div class="alert alert-warning">The input values are not in the required range. Please adjust them and try again.</div>
+                </div>
+                {% else %}
+                <div class="card bg-dark text-white" style="width: 20rem; height: 20rem; margin: auto;">
+                    <img class="card-img-top" src="{{ url_for('static', filename=image_filename) }}" alt="{{ result }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ result }}</h5>
+                    </div>
+                </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="social-media-links">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h3 class="contactus">Contact Us</h3>
+            <p>Email: <a href="mailto:support@agrovisionary.com">support@agrovisionary.com</a></p>
+            <p>Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p>Address: <a href="https://www.google.com/maps/search/?api=1&query=Aditya+Layout,+Rajarajeshwari+Nagar,+Bengaluru,+Karnataka+560098" target="_blank">Aditya Layout, Rajarajeshwari Nagar, Bengaluru, Karnataka 560098</a></p>
+        </div>
+        <p>&copy; 2024 CodeBrigade. All rights reserved.</p>
+    </footer>
+    
+    
+
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+    <script src="{{ url_for('static', filename='crr.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzA6Y+UEpI6xvv/dxVgStzOj3UksdQRVvoxMfooPf9gT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-QFYvrj1w6BZK++8tx1JpS0lUNeID/bM1TlGfwY6rIQJq4uKqFMIl0BncL9/10Fpc" crossorigin="anonymous"></script>
+</body>
+</html>
