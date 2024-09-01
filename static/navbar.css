@@ -1,0 +1,135 @@
+/* Navigation Bar Styling */
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center navigation content */
+    align-items: center;
+}
+
+/* Navigation Container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit max width for better layout */
+    padding: 1rem 2rem;
+}
+
+/* Logo Styling */
+.logo img {
+    height: 50px; /* Adjust size as needed */
+    object-fit: contain; /* Ensure the logo scales nicely */
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #57B894;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #57B894;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Burger Menu Styling */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+.burger.active div:nth-child(1) {
+    transform: rotate(45deg);
+    background: #57B894;
+}
+
+.burger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    background: #57B894;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transform: translateY(-100%); /* Start hidden */
+        transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        transform: translateY(0); /* Slide in when opened */
+        height: calc(100vh - 4rem);
+    }
+
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .burger {
+        display: flex; /* Show burger menu on small screens */
+    }
+}
+
+/* Hide burger menu on larger screens */
+@media (min-width: 769px) {
+    .burger {
+        display: none;
+    }
+}

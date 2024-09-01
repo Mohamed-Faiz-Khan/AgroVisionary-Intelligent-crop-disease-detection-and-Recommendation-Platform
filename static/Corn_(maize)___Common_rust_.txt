@@ -1,0 +1,7 @@
+Common Rust Management
+1. Choose Resistant Hybrids: Select corn hybrids that have resistance to common rust.
+2. Crop Rotation: Rotate with non-host crops to reduce disease pressure.
+3. Sanitation: Remove and destroy infected crop residues after harvest to minimize spore sources.
+4. Fungicide Applications: Apply fungicides (e.g., pyraclostrobin, trifloxystrobin) at early signs of infection or during the tasseling stage.
+5. Proper Plant Spacing: Ensure adequate spacing for better air circulation and reduced humidity.
+6. Monitor Weather Conditions: Keep an eye on warm, humid conditions that favor rust development.
