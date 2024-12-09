@@ -1,3 +1,4 @@
+                      About The Project:
 Agriculture is vital to the global economy, with increasing demands for food 
 production due to population growth. Precision agriculture, which leverages technology to 
 enhance crop yields, has made significant strides, yet challenges like accurate crop 
@@ -22,6 +23,6 @@ design and responsiveness further enhance its value in promoting sustainable agr
 
 To run this platform we need to run the file of app.py in any code editor(ex. vs code).
 The datasete for crop disease detection is plantvillage dataset. It has images. It has about 38 disease and 13 crops respectively. The size is around 54,305 images in color. Link: https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
-The trained model link is present in the training model.
+The trained model link is present in the training model so just paste it in that path only(in trained models).
 
 The dataset for crop disease detection is Crop_recommendation dataset. It is a CSV File. It haas about 22 crops in the dataset. The size is about 2200 overall, (100 for each crop). The dataset is in the above files.
