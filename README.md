@@ -1,4 +1,4 @@
-                        About The Project:
+                                                              About The Project:
 Agriculture is vital to the global economy, with increasing demands for food 
 production due to population growth. Precision agriculture, which leverages technology to 
 enhance crop yields, has made significant strides, yet challenges like accurate crop 
