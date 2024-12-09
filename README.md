@@ -28,7 +28,7 @@ The trained model link is present in the training model so just paste it in that
 The dataset for crop disease detection is Crop_recommendation dataset. It is a CSV File. It haas about 22 crops in the dataset. The size is about 2200 overall, (100 for each crop). The dataset is in the above files.
 
 How to run the file:-
-We need to run just the app.py file in the src folder.
+We need to run the app.py file.
 
 Required Libraries:-
  1. flask
