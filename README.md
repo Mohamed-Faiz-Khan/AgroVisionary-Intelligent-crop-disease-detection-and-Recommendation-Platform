@@ -1,4 +1,4 @@
-                      About The Project:
+                        About The Project:
 Agriculture is vital to the global economy, with increasing demands for food 
 production due to population growth. Precision agriculture, which leverages technology to 
 enhance crop yields, has made significant strides, yet challenges like accurate crop 
@@ -26,3 +26,17 @@ The datasete for crop disease detection is plantvillage dataset. It has images. 
 The trained model link is present in the training model so just paste it in that path only(in trained models).
 
 The dataset for crop disease detection is Crop_recommendation dataset. It is a CSV File. It haas about 22 crops in the dataset. The size is about 2200 overall, (100 for each crop). The dataset is in the above files.
+
+How to run the file:-
+We need to run just the app.py file in the src folder.
+
+Required Libraries:-
+ 1. flask
+ 2. numpy
+ 3. pickle
+ 4. PIL
+ 5. tensorflow
+ 6. io
+ 7. json
+
+
